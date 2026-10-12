@@ -39,3 +39,11 @@ Não envie código-fonte, credenciais ou a pasta `target/` para a hospedagem.
 
 O workflow GitHub Actions testa e compila o projeto e disponibiliza o pacote
 `guararema-site` como artefato. Não publica por FTP automaticamente.
+
+### Permissões na hospedagem Apache
+
+Use `755` nas pastas `guararema` e `public`, e `644` nos arquivos,
+incluindo `.htaccess`, `index.html`, `game.js`, `style.css` e `public/core.wasm`.
+O empacotador aplica essas permissões e gera `guararema-site.zip`.
+Se o Apache exibir “Server unable to read htaccess file”, confira também as
+permissões das pastas pai e dos respectivos arquivos `.htaccess` no cPanel.
