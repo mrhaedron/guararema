@@ -1,0 +1,32 @@
+name: Validate and build WASM
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Rust target
+        run: rustup target add wasm32-unknown-unknown
+      - name: Test Rust and navigation
+        run: |
+          cargo test
+          node --check game.js
+          node tests/smoke.cjs
+      - name: Compile WASM and package site
+        run: |
+          ./build-wasm.sh
+          node tests/wasm.cjs
+          ./scripts/package-site.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: guararema-site
+          path: dist/
+          include-hidden-files: true
