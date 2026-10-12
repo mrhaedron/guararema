@@ -10,7 +10,7 @@ Na pasta do projeto:
 python3 -m http.server 8080
 ```
 
-Abra http://localhost:8080. Clique em **Começar o passeio**. WASD move, mouse olha, Shift corre, Esc pausa. Requer computador com mouse e WebGL. Existem colisões com edifícios, plataforma, carros e vagões. O protótipo oferece somente navegação livre em primeira pessoa; as missões serão definidas posteriormente.
+Abra http://localhost:8080. Clique em **Começar o passeio**. WASD ou as setas movem, mouse olha, Shift corre, Esc pausa. Requer computador com mouse e WebGL. Existem colisões com edifícios, plataforma, carros e vagões. O protótipo oferece somente navegação livre em primeira pessoa; as missões serão definidas posteriormente.
 
 ## Compilar o núcleo Rust para WASM
 
