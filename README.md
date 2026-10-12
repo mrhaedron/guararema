@@ -20,7 +20,7 @@ Instale Rust com rustup e execute:
 ./build-wasm.sh
 ```
 
-Recarregue o navegador. O indicador passa a mostrar **RUST + WEBASSEMBLY**. O módulo Rust controla normalização de movimento, velocidade e limites do mundo; JavaScript controla WebGL, geometria, eventos, interface e colisões locais. A prévia funciona com um fallback JavaScript quando `public/core.wasm` ainda não foi compilado. Este ambiente não tinha Rust e o download do compilador falhou; a compilação Rust permanece pendente.
+Recarregue o navegador. O indicador passa a mostrar **RUST + WEBASSEMBLY**. O módulo Rust controla normalização de movimento, velocidade e limites do mundo; JavaScript controla WebGL, geometria, eventos, interface e colisões locais. A prévia funciona com um fallback JavaScript quando `public/core.wasm` ainda não foi compilado. O módulo compilado está incluído em `public/core.wasm` e foi validado com `node tests/wasm.cjs`.
 
 ```sh
 cargo test
